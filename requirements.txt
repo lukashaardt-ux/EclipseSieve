@@ -1,0 +1,21 @@
+# EclipseSieve — Python dependencies
+# Pinned to the versions used during development for reproducibility.
+# Install with:  pip install -r requirements.txt
+
+# Note: package install names below differ from their import names in a few cases. These are the names pip needs, not what you type in `import`:
+#   scikit-learn   -> import sklearn
+#   batman-package -> import batman
+#   astroquery     -> import astroquery (provides astroquery.ipac.nexsci...)
+
+pandas==3.0.1
+numpy==2.4.3
+scipy==1.17.1
+scikit-learn==1.8.0
+xgboost==3.2.0
+matplotlib==3.10.8
+seaborn==0.13.2
+lightkurve==2.5.1
+astroquery==0.4.11
+batman-package==2.5.3
+shap==0.52.0
+joblib==1.5.3

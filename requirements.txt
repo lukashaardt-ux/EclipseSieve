@@ -19,3 +19,4 @@ astroquery==0.4.11
 batman-package==2.5.3
 shap==0.52.0
 joblib==1.5.3
+statsmodels==0.14.6

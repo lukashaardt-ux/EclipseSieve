@@ -216,7 +216,3 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-
-# EclipseSieve — project-specific
-results/
-*_backup*.csv

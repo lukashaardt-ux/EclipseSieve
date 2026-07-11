@@ -17,9 +17,9 @@ try:
     stage1_data = joblib.load(ECLIPSE_SIEVE_PKL)
     stage1_xgb = stage1_data['XGB']
     stage1_features = stage1_data['features']
-    print('      -> Models loaded successfully.')
+    print('Models loaded successfully.')
 except Exception as e:
-    print(f'      -> ERROR loading models: {e}')
+    print(f'ERROR loading models: {e}')
 
 print('Extracting Template...')
 try:
@@ -27,9 +27,9 @@ try:
     planet_pool = df[df['label'] == 1]
     fp_pool = df[df['label'] == 0]
     planet_template = planet_pool.iloc[[0]].copy()
-    print(f'      -> Found {len(planet_pool)} planet examples and {len(fp_pool)} false positive examples.')
+    print(f'Found {len(planet_pool)} planet examples and {len(fp_pool)} false positive examples.')
 except Exception as e:
-    print(f'      -> ERROR reading dataset: {e}')
+    print(f'ERROR reading dataset: {e}')
 
 print('Generating BEB transit simulation...')
 time = np.linspace(-0.05, 0.05, 1000)

@@ -53,23 +53,16 @@ print('\n' + '=' * 60)
 print(f' AMBIGUOUS: {len(amb)}  |  CONFIDENT: {len(conf)}  (held-out 20%) ')
 print('=' * 60)
 
-# --- 1. Class makeup: are ambiguous cases mostly planets, FPs, or mixed? ---
-print('\n[1] CLASS BALANCE')
 print(f'  Ambiguous -> planets (label=1): {(amb['label']==1).sum()}, '
       f'false positives (label=0): {(amb['label']==0).sum()}')
 print(f'  Confident -> planets (label=1): {(conf['label']==1).sum()}, '
       f'false positives (label=0): {(conf['label']==0).sum()}')
 
-# --- 2. How accurate is the model on ambiguous vs confident? ---------------
 amb_pred = (amb['stage1_prob'] > 0.5).astype(int)
 conf_pred = (conf['stage1_prob'] > 0.5).astype(int)
-print('\n[2] ACCURACY BY GROUP')
 print(f'  On ambiguous cases : {(amb_pred==amb['label']).mean()*100:.1f}%')
 print(f'  On confident cases : {(conf_pred==conf['label']).mean()*100:.1f}%')
 
-# --- 3. Feature-by-feature: median in ambiguous vs confident ---------------
-# A large gap on a feature = that feature characterizes 'hard'.
-print('\n[3] FEATURE MEDIANS: ambiguous vs confident (sorted by relative gap)')
 key_features = ['snr', 'archive_snr', 'depth', 'impact_parameter', 'transit_snr_bls',
                 'bls_power', 'sec_eclipse_depth', 'odd_even_diff', 'planet_radius',
                 'stellar_teff', 'max_mes', 'max_ses', 'cdpp', 'symmetry',
@@ -84,10 +77,5 @@ gap_df = pd.DataFrame(rows).reindex(
     pd.DataFrame(rows)['pct_diff'].abs().sort_values(ascending=False).index)
 print(gap_df.to_string(index=False))
 
-# --- 4. Save the ambiguous cases for your own inspection -------------------
 out = amb[['kepid', 'label', 'stage1_prob'] + key_features].copy()
 out.to_csv(results_path('ambiguous_cases_detail.csv'), index=False)
-print(f"\n[4] Saved {len(out)} ambiguous cases to '{results_path('ambiguous_cases_detail.csv')}'")
-print('\nLook at [2] and [3] first. [2] tells you HOW wrong the model is on')
-print('hard cases. [3] tells you WHICH features separate hard from easy --')
-print('the features with the biggest gaps are your discovery leads.')

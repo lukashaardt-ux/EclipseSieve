@@ -16,7 +16,7 @@ FIGURES_DIR = os.path.join(ROOT_DIR, 'figures', 'current')
 for _dir in (DATA_DIR, MODELS_DIR, RESULTS_DIR, FIGURES_DIR):
     os.makedirs(_dir, exist_ok=True)
 
-EXOPLANET_FEATURES_CSV = os.path.join(DATA_DIR, 'exoplanet_features.csv')
+EXOPLANET_FEATURES_CSV = os.path.join(DATA_DIR, 'labeled_exoplanet_features.csv')
 CANDIDATE_FEATURES_CSV = os.path.join(DATA_DIR, 'candidate_features.csv')
 
 ECLIPSE_SIEVE_PKL = os.path.join(MODELS_DIR, 'EclipseSieve.pkl')

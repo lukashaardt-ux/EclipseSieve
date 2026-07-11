@@ -1,5 +1,5 @@
 '''
-This script adds the catalog features to the directed csv file (exoplanet_features.csv or candidate_features.csv) 
+This script adds the catalog features to the directed csv file (labeled_exoplanet_features.csv or candidate_features.csv)
 '''
 
 import os
@@ -10,7 +10,7 @@ from paths import data_path
 import warnings
 warnings.filterwarnings('ignore')
 
-TESTING_CSV='candidate_features.csv'  # Change to 'exoplanet_features.csv' to test on the confirmed/false positive set instead
+TESTING_CSV='candidate_features.csv'  # Change to 'labeled_exoplanet_features.csv' to test on the confirmed/false positive set instead
 DATA_FILE = data_path(TESTING_CSV) 
 
 df = pd.read_csv(DATA_FILE)

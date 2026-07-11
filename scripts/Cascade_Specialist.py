@@ -93,7 +93,7 @@ for i in range(len(test_probs_s1)):
 print(f'Targets intercepted and routed to specialist: {intercepted}')
 
 print('\n' + '=' * 55)
-print(' PATH B — TRUE SPECIALIST CASCADE (SET 3 held-out) ')
+print('TRUE SPECIALIST CASCADE')
 print('=' * 55)
 print(f'Test set size : {len(y_test)}')
 print(f'Accuracy      : {accuracy_score(y_test, final_preds) * 100:.2f}%')

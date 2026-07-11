@@ -147,7 +147,8 @@ def download_lc(kepid):
 
 
 def run_extraction(df, output_file, use_labels):
-    '''Shared download + extract + resume/checkpoint loop.
+    '''
+    Shared download + extract + resume/checkpoint loop.
 
     df          : DataFrame with at least 'kepid', 'koi_period', 'koi_disposition'
                   (and 'label' if use_labels is True).

@@ -21,7 +21,6 @@ CANDIDATE_FEATURES_CSV = os.path.join(DATA_DIR, 'candidate_features.csv')
 
 ECLIPSE_SIEVE_PKL = os.path.join(MODELS_DIR, 'EclipseSieve.pkl')
 ECLIPSE_SIEVE_STAGE2_PKL = os.path.join(MODELS_DIR, 'EclipseSieve_Stage2_Interceptor.pkl')
-ECLIPSE_SIEVE_STAGE1_OPTIMIZED_PKL = os.path.join(MODELS_DIR, 'EclipseSieve_Stage1_Optimized.pkl')
 
 
 def data_path(filename):
